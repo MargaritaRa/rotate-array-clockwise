@@ -1,5 +1,10 @@
 function rotateArray(arr, k) {
-  // type your code here
+  // initialize rotations to store the remainder of k / array length
+ const rotation = k % arr.length;
+//  remove rotations number elements from end of array
+ const removed = arr.splice(arr.length - rotation, rotation);
+// return removed elements + remaining elements
+ return removed.concat(arr);
 }
 
 if (require.main === module) {
@@ -22,3 +27,9 @@ module.exports = rotateArray;
 
 // Please add your pseudocode to this file
 // And a written explanation of your solution
+
+// function rotateArray(arr, k){
+//   const rotations = k % arr.length;
+//   const removedd = arr.splice(arr.length - rotations, rotations)
+//   return removedd.concat(arr)
+// }
